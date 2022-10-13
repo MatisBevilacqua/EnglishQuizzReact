@@ -1,0 +1,74 @@
+*{
+    text-decoration: none;
+    margin: 0;
+}
+
+
+
+.containerBombe{
+    height: 100%;
+}
+
+.containerBig{
+    height:100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* STARTED */
+
+.container{
+    width: 100%;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.mainContainer h1{
+    color: #030B1E;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.mainContainer p{
+    color:#9EA1A6;
+    font-size: 18px;
+}
+
+/* BTN */
+
+.mainBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+
+.getRegister{
+    padding-left:125px;
+    padding-right: 125px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color:#3AB19B;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.getLogin{
+    padding-left:75px;
+    padding-right: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color:#F4F8F7;
+    color: #030B1E;
+}
