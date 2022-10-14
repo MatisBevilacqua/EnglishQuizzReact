@@ -4,6 +4,7 @@ import Started from './Components/Started';
 import Register from './Components/Register';
 import Login from './Components/Login';
 import Main from './Components/Main';
+import QuizCreate from './Components/QuizCreate';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/main' element={<Main/>}/>
+          <Route path='/quizcreate' element={<QuizCreate/>}/>
         </Route>
       </Routes>
     </div>

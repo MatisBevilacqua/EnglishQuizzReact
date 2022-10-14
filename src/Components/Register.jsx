@@ -17,7 +17,7 @@ function Register() {
         try{
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
             console.log(registerEmail);
-            navigate("/login")
+            navigate("/main")
         }catch(error){
             console.log(error.message);
         }

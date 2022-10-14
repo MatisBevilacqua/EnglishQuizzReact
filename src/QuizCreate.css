@@ -1,0 +1,37 @@
+.quizCreateTop{
+    width: 400px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quizCreateTop h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.quizCreateBody{
+    width: 300px;
+    height: 500px;
+    transition: 0.3s;
+    /* animation-duration: 3s;
+    animation-name: slidein; */
+}
+
+input{
+    animation-duration: 0.3s;
+    animation-name: slidein;
+}
+
+
+@keyframes slidein {
+    from {
+    opacity: 0;
+    }
+
+    to {
+    opacity: 1;
+    } 
+}
+

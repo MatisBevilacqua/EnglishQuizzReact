@@ -1,0 +1,47 @@
+.containerTop{
+    width: 400px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerTop h1{
+    text-align: center;
+}
+
+.containerBody{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+select{
+    border: none;
+    border: 0;
+    outline: 1px solid #3AB19B;
+    outline-offset: -1px;
+    border-radius: 2px;
+}
+
+#subject-select{
+    padding: 10px;
+}
+
+
+#chooseSelect{
+    text-align: center;
+}
+
+.bodyBtn{
+    padding: 10px 102px;
+    border-radius: 5px;
+    background-color:#3AB19B;
+    margin-bottom: 15px;
+    color: white;
+}
+
+
