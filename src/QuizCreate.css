@@ -24,6 +24,14 @@ input{
     animation-name: slidein;
 }
 
+.btnSubmit{
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    color: black;
+}
 
 @keyframes slidein {
     from {

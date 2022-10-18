@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../firebase-config";
 import { Link, useNavigate} from "react-router-dom";
 import '../LoginAndRegister.css';
 
-function Register() {
 
+function Register() {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-    const [loginEmail, setloginEmail] = useState("");
-    const [loginPassword, setloginPassword] = useState("");
 
+    // Pour la redirection
     const navigate = useNavigate();
+    //
 
+    // Se creer un compte
     const register = async () => {
         try{
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
@@ -23,16 +24,7 @@ function Register() {
         }
     };
 
-    const login = async () => {
-    try{
-        const loginUSER = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-        console.log(loginUSER);
-    }catch(error){
-        console.log(error.message);
-    }
-    };
-    
-    
+    // 
     return (
     <div className="maininput">
         <h1>Create an account</h1>
@@ -41,13 +33,8 @@ function Register() {
                 <input type="email" placeholder="Email Address" onChange={(event) => {setRegisterEmail(event.target.value)}}></input>
                 <input type="password" placeholder="Password" onChange={(event) => {setRegisterPassword(event.target.value)}}></input>
                 <a onClick={register}>Create an account</a>
-            </div>
-            {/* <div className="containerInput">
-                <h1>Login</h1>
-                <input placeholder="Nom d'utilisateur" onChange={(event) => {setloginEmail(event.target.value)}}></input>
-                <input placeholder="Mot de passe" onChange={(event) => {setloginPassword(event.target.value)}}></input>
-                <a onClick={login}>Valider</a>
-            </div> */}
+                {/* Une fois cliquer le compte est créer */}
+            </div>      
         </div>
     </div>
     );
