@@ -21,18 +21,17 @@ onAuthStateChanged(auth, (user) => {
 
 export default function MainPage() {
     const [quiz, setQuiz] = useState([]);
+    const [name, setName] = useState('');
 
     useEffect(() => {
         const db = getDatabase();
         const cheminQuiz = ref(db, '/user/' + uid + '/quiz/');
         onValue(cheminQuiz, (snapshot) => {
             const data = snapshot.val();
-            
             let quizzTemp = []
             for (const quizzName in data) {
                 quizzTemp.push(quizzName)
             } 
-
             setQuiz(quizzTemp);
         });
 
@@ -40,11 +39,23 @@ export default function MainPage() {
         return () => { }
     }, [])
 
+    useEffect(() => {
+        const db = getDatabase();
+        const nameQuiz = ref(db, '/user/' + uid + '/nameUser/');
+        onValue(nameQuiz, (snapshot) => {
+            // const data = snapshot.val();
+            // setName(snapshot.val().name);
+            setName(snapshot.val().name)
+        });
+        return () => { }
+    })
+
     return (
-        <div className="main">
+        <div className="big">
+            <div className="main">
             <div className="main-page">
                 <div className="text-main-page">
-                    <h1 className='h1-main-page'></h1>
+                    <h1 className='h1-main-page'>Bienvenue, { name}</h1>
                 </div>
                 <div className="main-page-box">
                     {quiz.map((x, i) => <div key={i} className="box-page">
@@ -55,6 +66,7 @@ export default function MainPage() {
                     <Link to="/namequiz" className='btn-main-page'>Create new quiz</Link>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

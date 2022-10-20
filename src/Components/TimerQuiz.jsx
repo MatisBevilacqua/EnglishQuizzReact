@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 import {set, update, child, push, getDatabase, ref, onValue } from "firebase/database";
 import {db, auth} from '../firebase-config';
 
-let uid
+let uid;
+let count = 0;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -41,11 +42,14 @@ const TimerQuiz = (props) => {
                 setSeconds(seconds => seconds - 1);
             }, 1000);
         } else if (!isActive && seconds !== 0) {
-            clearInterval(interval);
+        
         }
         if (seconds === 0) {
-            setIsActive(false); 
+            count++
+            console.log(count)
+            setSeconds(random);
         }
+
         return () => clearInterval(interval);
     }, [isActive, seconds]);
 
@@ -67,7 +71,7 @@ const TimerQuiz = (props) => {
     return (
         <div className='container'>
             <div className="main-container">
-                <h1>{quiz[0]}</h1>
+                <h1>{quiz[count]}</h1>
                 <h1 className='seconde'>{seconds}</h1>
             </div>
         </div>

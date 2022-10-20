@@ -54,6 +54,8 @@ export default function QuizCreate() {
             setName(snapshot.val().name);
         });
 
+        console.log(setName);
+
         return () => { }
     })
 

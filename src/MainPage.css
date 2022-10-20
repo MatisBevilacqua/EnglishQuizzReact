@@ -1,12 +1,18 @@
+/* *{
+    background-image: linear-gradient(#3ab19b, #f4f8f7);
+
+} */
+
+
 .h1-main-page{
-    font-size:20px;
+    font-size:25px;
     margin-left: 10px;
 }
 
 .main-page-box{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-between;
 }
 
 .text-main-page{
@@ -14,15 +20,20 @@
 }
 
 .box-page{
-    width: 100px;
-    height: 100px;
+    width: 45%;
+    height: 192px;
     background-color: #F4F8F7;
     margin-left: 10px;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.box-page a{
+    font-size: 20px;
+    color: black;
 }
 
 .btn-main{
@@ -32,10 +43,11 @@
 }
 
 .btn-main-page {
-    padding: 11px 105px;
+    padding: 14px 105px;
     border-radius: 5px;
-    background-color:#3AB19B;
+    background-color: #3AB19B;
     margin-top: 30px;
     color: white;
+    font-size: 17px;
 }
 
