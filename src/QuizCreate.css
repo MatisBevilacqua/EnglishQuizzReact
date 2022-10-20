@@ -30,7 +30,11 @@ input{
 }
 
 .btn {
-    color: black;
+        padding: 11px 95px;
+        border-radius: 5px;
+        background-color:#3AB19B;
+        margin-bottom: 15px;
+        color: white;
 }
 
 @keyframes slidein {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {set, ref, update, child } from "firebase/database";
+import React, { useState, useEffect } from 'react';
+import {set, update, child, push, getDatabase, ref, onValue } from "firebase/database";
 import { Link } from "react-router-dom";
 import {db} from '../firebase-config';
 import {onAuthStateChanged } from "firebase/auth";
@@ -24,7 +24,7 @@ if (user) {
 export default function QuizCreate() {
     
     const[questions, setQuestion] =  useState([ "" ]); 
-
+    const [name, setName] = useState('');
     
     function setQuestionItem(e, i){
         let questionsArr = questions.slice()
@@ -33,19 +33,29 @@ export default function QuizCreate() {
         setQuestion(questionsArr)
     }
 
-    function writeNewPosts() {
+    function putQuiz() {
         // A post entry.
         const postData = {
             quiz: questions,
         };
         // Get a key for a new Post.
-        const newPostKey = push(child(ref(db), 'quiz')).key;
+        const newQuizKey = push(child(ref(db), 'quiz')).key;
         // Write the new post's data simultaneously in the posts list and the user's post list.
         const updates = {};
-        updates['/user/' + uid + '/' + newPostKey] = postData;
+        updates['/user/' + uid + '/quiz/' + name +'/quiz'] = questions;
         return update(ref(db), updates);
     }
 
+    useEffect(() => {
+        const db = getDatabase();
+        const nameQuiz = ref(db, '/user/' + uid + '/nameQuiz/');
+        onValue(nameQuiz, (snapshot) => {
+            // const data = snapshot.val();
+            setName(snapshot.val().name);
+        });
+
+        return () => { }
+    })
 
     function addItem(){
         setQuestion((arr) => [...arr, ""])
@@ -55,7 +65,7 @@ export default function QuizCreate() {
     return (
         <div className='quizCreateTop'>
             <div className='quizCreateBody'>
-                <h1>Create your QCM</h1>
+                <h1>{name}</h1>
                 <div className='quizCreateInput'>
                     {questions.map((x, i) =><div>
                         <input value={x} onChange={(e) => setQuestionItem(e, i)} placeholder='Definition of Bye ?'></input>
@@ -65,9 +75,9 @@ export default function QuizCreate() {
                     <div className='quizInputMore'>
                         <h1 onClick={addItem} className='InputMore'>+</h1>
                     </div>
-                        
+
                     <div className='btnSubmit'>
-                        <Link to="/timerquiz" onClick={writeNewPosts} className='btn'>Lancer le QCM</Link>
+                        <Link to="/mainpage" onClick={putQuiz} className='btn'>Save my quizz</Link>
                     </div>
                 </div>
             </div>

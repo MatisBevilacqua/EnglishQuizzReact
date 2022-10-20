@@ -1,0 +1,41 @@
+.h1-main-page{
+    font-size:20px;
+    margin-left: 10px;
+}
+
+.main-page-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-main-page{
+    display: flex;
+}
+
+.box-page{
+    width: 100px;
+    height: 100px;
+    background-color: #F4F8F7;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-main{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn-main-page {
+    padding: 11px 105px;
+    border-radius: 5px;
+    background-color:#3AB19B;
+    margin-top: 30px;
+    color: white;
+}
+

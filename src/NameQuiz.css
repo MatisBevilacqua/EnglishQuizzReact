@@ -1,0 +1,18 @@
+.name-quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-quiz h1{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.btn-get-name {
+    padding: 11px 85px;
+    border-radius: 5px;
+    background-color:#3AB19B;
+    margin-top: 30px;
+    color: white;
+}

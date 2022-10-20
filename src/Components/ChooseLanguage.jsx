@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import {set, ref, update, push, child } from "firebase/database";
+import React, { useState, useEffect } from 'react';
+import { update, child, push, getDatabase, ref, onValue } from "firebase/database";
 import {db} from '../firebase-config';
 import {onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase-config';
-import '../Main.css';
 import { Link } from "react-router-dom";
+import '../Main.css';
 
 let uid
 
@@ -24,19 +24,30 @@ onAuthStateChanged(auth, (user) => {
 
 function Main() {
     const [chooseSubject, setChooseSubject] = useState("");
+    const [name, setName] = useState('');
 
-    function writeNewPost() {
-        // A post entry.
-        const postData = {
-            language: chooseSubject,
-        };
-        // Get a key for a new Post.
-        const newPostKey = push(child(ref(db), 'language')).key;
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        const updates = {};
-        updates['/user/' + uid + '/' + newPostKey] = postData;
-        return update(ref(db), updates);
-    }
+        function puttLanaguage() {
+            // A post entry.
+            const postData = {
+                language: chooseSubject,
+            };
+            // Write the new post's data simultaneously in the posts list and the user's post list.
+            const updates = {};
+            updates['/user/' + uid + '/quiz/' + name + '/language/'] = chooseSubject;
+            return update(ref(db), updates);
+        }
+
+    
+        useEffect(() => {
+            const db = getDatabase();
+            const nameQuiz = ref(db, '/user/' + uid + '/nameQuiz/');
+            onValue(nameQuiz, (snapshot) => {
+                // const data = snapshot.val();
+                setName(snapshot.val().name);
+            });
+    
+            return () => { }
+        })
 
     return (
         <div className="containerTop">
@@ -51,9 +62,8 @@ function Main() {
                     <option value="french">French</option>
                     <option value="spanish" >Spanish</option>
                 </select>
-                
                 <div className="containerBodyBtn">
-                    <Link to="/quizcreate" onClick={writeNewPost} className="bodyBtn">Create QCM !</Link>
+                    <Link to="/quizcreate" onClick={puttLanaguage} className="bodyBtn">Create QCM !</Link>
                 </div>
             </div>
         </div>

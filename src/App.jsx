@@ -1,12 +1,14 @@
 // import './App.css'
 import PropTypes from 'prop-types';
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
+import { Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
 import Started from './Components/Started';
 import Register from './Components/Register';
 import Login from './Components/Login';
-import Main from './Components/Main';
+import ChooseLanguage from './Components/ChooseLanguage';
 import QuizCreate from './Components/QuizCreate';
 import TimerQuiz from './Components/TimerQuiz';
+import NameQuiz from './Components/NameQuiz';
+import MainPage from './Components/MainPage';
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
           <Route path='/' element={<Started />}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/main' element={<Main/>}/>
+          <Route path='/chooselanguage' element={<ChooseLanguage/>}/>
           <Route path='/quizcreate' element={<QuizCreate/>}/>
-          <Route path='/timerquiz' element={<TimerQuiz/>}/>
+          <Route path='/timerquiz/:name' element={<TimerQuiz/>}/>
+          <Route path='/namequiz' element={<NameQuiz/>}/>
+          <Route path='/mainpage' element={<MainPage/>}/>
         </Route>
       </Routes>
     </div>
