@@ -8,7 +8,7 @@ function Started() {
             <div className="containerBig">
                 <div className="container">
                     <div className="mainContainer">
-                        <h1>Hey ! Welcome</h1>
+                        <h1>Welcome on creaze</h1>
                         <p>The best free website, for learning english.</p>
                         <div className="mainBtn">
                             <Link to="/register" className="getRegister">Get started</Link>

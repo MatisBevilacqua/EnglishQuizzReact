@@ -3,6 +3,14 @@
 
 } */
 
+.main-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .h1-main-page{
     font-size:25px;
@@ -13,6 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
+    max-width: 70%;
 }
 
 .text-main-page{
@@ -20,7 +29,7 @@
 }
 
 .box-page{
-    width: 45%;
+    width: 30vw;
     height: 192px;
     background-color: #F4F8F7;
     margin-left: 10px;

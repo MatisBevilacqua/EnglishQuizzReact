@@ -8,7 +8,8 @@ import ChooseLanguage from './Components/ChooseLanguage';
 import QuizCreate from './Components/QuizCreate';
 import TimerQuiz from './Components/TimerQuiz';
 import NameQuiz from './Components/NameQuiz';
-import MainPage from './Components/MainPage';
+import PageQuizUser from './Components/PageQuizUser';
+import MainUser from './Components/MainUser';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path='/quizcreate' element={<QuizCreate/>}/>
           <Route path='/timerquiz/:name' element={<TimerQuiz/>}/>
           <Route path='/namequiz' element={<NameQuiz/>}/>
-          <Route path='/mainpage' element={<MainPage/>}/>
+          <Route path='/pagequizuser' element={<PageQuizUser/>}/>
+          <Route path='/mainuser' element={<MainUser/>}/>
         </Route>
       </Routes>
     </div>

@@ -79,7 +79,7 @@ export default function QuizCreate() {
                     </div>
 
                     <div className='btnSubmit'>
-                        <Link to="/mainpage" onClick={putQuiz} className='btn'>Save my quizz</Link>
+                        <Link to="/mainuser" onClick={putQuiz} className='btn'>Save my quizz</Link>
                     </div>
                 </div>
             </div>

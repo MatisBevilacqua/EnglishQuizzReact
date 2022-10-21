@@ -19,7 +19,7 @@ function Login() {
             const loginUSER = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
             
             // console.log(loginEmail);
-            navigate("/mainpage")
+            navigate("/mainuser")
         }catch(error){
             console.log(error.message);
         }

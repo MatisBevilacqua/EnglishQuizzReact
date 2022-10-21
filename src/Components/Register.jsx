@@ -31,8 +31,8 @@ function Register() {
     // Se creer un compte
     const register = async () => {
         try {
-            navigate("/namequiz")
-            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+            navigate("/mainuser")
+            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
             // A post entry.
             const postData = {
                 name: yourname,
@@ -46,7 +46,7 @@ function Register() {
         }
     };
 
-
+    
 
 
     // 
