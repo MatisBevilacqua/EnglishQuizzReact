@@ -50,6 +50,11 @@ const TimerQuiz = (props) => {
             setSeconds(random);
         }
 
+        if (seconds === 0 && count >= quiz.length){
+            setSeconds(0);
+            setIsActive(false);
+        }
+
         return () => clearInterval(interval);
     }, [isActive, seconds]);
 
@@ -66,6 +71,8 @@ const TimerQuiz = (props) => {
         
         return () => { }
     }, [])
+
+
     
     console.log(quiz);
     return (

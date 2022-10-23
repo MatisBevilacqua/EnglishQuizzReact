@@ -23,10 +23,10 @@
 
 .profilUserBottom{
     width: 100vw;
-    height: 70vh;
+    height: 65vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .text-bottom{
@@ -62,7 +62,7 @@
 }
 
 #spawn2{
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: spawn2;
 }
 
@@ -83,6 +83,21 @@
 
 
 @keyframes spawn3 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#spawn4{
+    animation-duration: 4s;
+    animation-name: spawn4;
+}
+
+
+@keyframes spawn4 {
     from {
         opacity: 0;
     }
@@ -112,6 +127,10 @@
 
 .imgBox{
     max-width: 30px;
+}
+
+.quizText{
+    margin-right: 37vw;
 }
 
 

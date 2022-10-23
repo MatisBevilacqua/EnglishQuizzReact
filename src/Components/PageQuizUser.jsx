@@ -55,7 +55,7 @@ export default function MainPage() {
             <div className="main">
             <div className="main-page">
                 <div className="text-main-page">
-                    {/* <h1 className='h1-main-page'>Bienvenue, { name}</h1> */}
+                    <h1 className='h1-main-page'>Your quiz</h1>
                 </div>
                 <div className="main-page-box">
                     {quiz.map((x, i) => <div key={i} className="box-page">

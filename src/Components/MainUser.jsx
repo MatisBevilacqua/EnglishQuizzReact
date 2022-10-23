@@ -8,6 +8,7 @@ import { Link} from "react-router-dom";
 import bookmark from '../bookmark.png';
 import user from '../user.png';
 import envelope from '../envelope.png';
+import eye from '../eye.png';
 import '../MainUser.css'
 
 // console.log(pngTop);
@@ -53,19 +54,19 @@ export default function MaisUser() {
                     <div id="spawn1" className="box-bottom">
                         {/* <Link>Acces my quiz</Link> */}
                         <div className="box1">
-                            <img className="imgBox" src={bookmark} alt="Logo" />
+                            <img className="imgBox" src={eye} alt="Logo" />
                         </div>
-                        <Link>Get Started</Link>
+                        <Link to="/pagequizuser" className='quizText'>My quiz</Link>
                     </div>
 
-                    <div id="spawn2" className="box-bottom">
+                    <div id="spawn3" className="box-bottom">
                         <div className="box1">
                             <img className="imgBox" src={user} alt="Logo" />
                         </div>
                         <Link>My account</Link>
                     </div>
 
-                    <div id="spawn3" className="box-bottom">
+                    <div id="spawn4" className="box-bottom">
                         <div className="box1">
                             <img className="imgBox" src={envelope} alt="Logo" />
                         </div>

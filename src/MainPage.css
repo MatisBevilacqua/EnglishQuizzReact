@@ -1,27 +1,21 @@
-/* *{
-    background-image: linear-gradient(#3ab19b, #f4f8f7);
-
-} */
 
 .main-page{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    background-color: #F4F8F7;
 }
 
 .h1-main-page{
-    font-size:25px;
-    margin-left: 10px;
+    font-size:40px;
+    margin: 29px 35px
 }
 
 .main-page-box{
     display: flex;
+    max-width: 97%;
     flex-wrap: wrap;
-    justify-content:space-between;
-    max-width: 70%;
+    justify-content: space-around;
+    align-content: space-between;
 }
 
 .text-main-page{
@@ -29,15 +23,27 @@
 }
 
 .box-page{
-    width: 30vw;
-    height: 192px;
-    background-color: #F4F8F7;
+    width: 35vw;
+    height: 17vh;
+    background-color: white;
     margin-left: 10px;
     margin-top: 20px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    animation-duration: 1s;
+    animation-name:box;
+}
+
+@keyframes box {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .box-page a{
